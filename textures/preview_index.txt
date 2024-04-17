@@ -1,3 +1,4 @@
 farmor/textures/farmor_helmet_melon.png:head
 farmor/textures/farmor_helmet_pumpkin.png:head
 farmor/textures/farmor_helmet_jackolantern.png:head
+farmor/textures/farmor_helmet_pineapple.png:head

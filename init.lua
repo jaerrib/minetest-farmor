@@ -31,6 +31,13 @@ armor:register_armor("farmor:helmet_jackolantern", {
 		armor_groups = {fleshy=5},
 		damage_groups = {cracky=3, snappy=2, choppy=2, crumbly=2, level=1},
 	})
+armor:register_armor("farmor:helmet_pineapple", {
+	description = S("Pineapple Helmet"),
+	inventory_image = "farmor_inv_helmet_pineapple.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=2000},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
+	})
 
 minetest.register_craft({
 	output = "farmor:helmet_melon",
@@ -56,3 +63,10 @@ minetest.register_craft({
 		{"", "", ""},
 	}
 })
+minetest.register_craft({
+	output = "farmor:helmet_pineapple",
+	recipe = {
+		{"farming:pineapple_ring", "farming:pineapple_ring", "farming:pineapple_ring"},
+		{"farming:pineapple_ring", "", "farming:pineapple_ring"},
+		{"", "", ""},
+	}
