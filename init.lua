@@ -38,6 +38,20 @@ armor:register_armor("farmor:helmet_pineapple", {
 		armor_groups = {fleshy=5},
 		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
 	})
+armor:register_armor("farmor:shield_hemp", {
+	description = S("Hemp Shield"),
+	inventory_image = "farmor_inv_shield_hemp.png",
+	groups = {armor_shield=1, armor_heal=0, armor_use=800,physics_speed=-0.03, physics_gravity=0.03},
+	armor_groups = {fleshy=8},
+	damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
+		reciprocate_damage = true,
+	on_damage = function(player, index, stack)
+		play_sound_effect(player, "default_dig_metal")
+	end,
+	on_destroy = function(player, index, stack)
+		play_sound_effect(player, "default_dug_metal")
+	end,
+})
 
 minetest.register_craft({
 	output = "farmor:helmet_melon",
@@ -69,4 +83,13 @@ minetest.register_craft({
 		{"farming:pineapple_ring", "farming:pineapple_ring", "farming:pineapple_ring"},
 		{"farming:pineapple_ring", "", "farming:pineapple_ring"},
 		{"", "", ""},
-	}
+		}
+})
+minetest.register_craft({
+	output = "farmor:shield_hemp",
+	recipe = {
+		{"farming:hemp_fibre", "farming:hemp_fibre", "farming:hemp_fibre"},
+		{"farming:hemp_fibre", "farming:hemp_fibre", "farming:hemp_fibre"},
+		{"", "farming:hemp_fibre", ""},
+		}
+})
